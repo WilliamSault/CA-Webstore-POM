@@ -21,13 +21,13 @@ docker-compose
 You can of course run your own scripts. To do this map the volume `/usr/src/app/Tests` to a folder with your tests. To execute the tests you must include `conf.js` which details the specs of the test.
 
 ```bash
-docker container run --rm --network="host" -v "$(PWD)/Protractor/Tests":/usr/src/app/Tests williamsault/protractor:latest
+docker container run --rm --network="host" -v "$(PWD)/Tests":/usr/src/app/Tests williamsault/protractor:latest
 ```
 
 Tests results can be visualised through Allure.
 
 ```bash
-docker container run --rm -d --name allure -p 8800:8800 -v  "${PWD}/Protractor/Tests/allure-results":/allure-results williamsault/allure
+docker container run --rm -d --name allure -p 8800:8800 -v  "${PWD}/Tests/allure-results":/allure-results williamsault/allure
 ```
 
 You can do this by running the shell script `RunTests.sh`
