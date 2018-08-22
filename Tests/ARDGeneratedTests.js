@@ -5,8 +5,9 @@ var paymentDetailsPage = require('./PageObjects/PaymentDetailsPage')
 
 browser.ignoreSynchronization = true;
 
-describe('Positive Scenario ', function() {
-    it('  21/08/2018 16:24:43', function(){
+describe('Order Products', function() {
+
+    it('Positive Scenario ', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -30,22 +31,18 @@ describe('Positive Scenario ', function() {
         paymentDetailsPage.clickCompletePurchase();
         browser.wait(protractor.ExpectedConditions.urlContains('finalise'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario ', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario ', function(){
         indexPage.get();
         indexPage.clickOrderProduct();
         browser.wait(protractor.ExpectedConditions.urlContains('index'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (1)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (1)', function(){
         indexPage.get();
         indexPage.setProductSelection('Desk');
         indexPage.clickOrderProduct();
@@ -68,12 +65,10 @@ describe('Negative Scenario (1)', function() {
             paymentDetailsPage.enterCardDetails('notnumbers');
         paymentDetailsPage.clickCompletePurchase();
     });
-});
 
 
 
-describe('Negative Scenario (2)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (2)', function(){
         indexPage.get();
         indexPage.setProductSelection('Doombar');
         indexPage.clickOrderProduct();
@@ -91,12 +86,10 @@ describe('Negative Scenario (2)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (3)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (3)', function(){
         indexPage.get();
         indexPage.setProductSelection('Water');
         indexPage.clickOrderProduct();
@@ -119,12 +112,10 @@ describe('Negative Scenario (3)', function() {
             paymentDetailsPage.enterCardDetails('1234');
         paymentDetailsPage.clickCompletePurchase();
     });
-});
 
 
 
-describe('Positive Scenario (1)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Positive Scenario (1)', function(){
         indexPage.get();
         indexPage.setProductSelection('Writing Pad');
         indexPage.clickOrderProduct();
@@ -148,12 +139,10 @@ describe('Positive Scenario (1)', function() {
         paymentDetailsPage.clickCompletePurchase();
         browser.wait(protractor.ExpectedConditions.urlContains('finalise'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (4)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (4)', function(){
         indexPage.get();
         indexPage.setProductSelection('Testers Pocketbook');
         indexPage.clickOrderProduct();
@@ -176,12 +165,10 @@ describe('Negative Scenario (4)', function() {
             paymentDetailsPage.enterCardDetails('1234');
         paymentDetailsPage.clickCompletePurchase();
     });
-});
 
 
 
-describe('Positive Scenario (2)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Positive Scenario (2)', function(){
         indexPage.get();
         indexPage.setProductSelection('Stationary');
         indexPage.clickOrderProduct();
@@ -205,12 +192,10 @@ describe('Positive Scenario (2)', function() {
         paymentDetailsPage.clickCompletePurchase();
         browser.wait(protractor.ExpectedConditions.urlContains('finalise'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (5)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (5)', function(){
         indexPage.get();
         indexPage.setProductSelection('Headphones');
         indexPage.clickOrderProduct();
@@ -233,12 +218,10 @@ describe('Negative Scenario (5)', function() {
             paymentDetailsPage.enterCardDetails('1234123412341234');
         paymentDetailsPage.clickCompletePurchase();
     });
-});
 
 
 
-describe('Negative Scenario (6)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (6)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -256,12 +239,10 @@ describe('Negative Scenario (6)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (7)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (7)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -284,12 +265,10 @@ describe('Negative Scenario (7)', function() {
             paymentDetailsPage.enterCardDetails('notnumbers');
         paymentDetailsPage.clickCompletePurchase();
     });
-});
 
 
 
-describe('Negative Scenario (8)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (8)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -307,12 +286,10 @@ describe('Negative Scenario (8)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (9)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (9)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -330,12 +307,10 @@ describe('Negative Scenario (9)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (10)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (10)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -353,12 +328,10 @@ describe('Negative Scenario (10)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (11)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (11)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -376,12 +349,10 @@ describe('Negative Scenario (11)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (12)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (12)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -399,12 +370,10 @@ describe('Negative Scenario (12)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (13)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (13)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -422,12 +391,10 @@ describe('Negative Scenario (13)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (14)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (14)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -445,12 +412,10 @@ describe('Negative Scenario (14)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (15)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (15)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -468,12 +433,10 @@ describe('Negative Scenario (15)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
-});
 
 
 
-describe('Negative Scenario (16)', function() {
-    it('  21/08/2018 16:24:43', function(){
+    it('Negative Scenario (16)', function(){
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
@@ -491,7 +454,7 @@ describe('Negative Scenario (16)', function() {
 
         browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
     });
+
+
+
 });
-
-
-

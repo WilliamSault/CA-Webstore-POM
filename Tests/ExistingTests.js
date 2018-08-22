@@ -39,7 +39,7 @@ describe('Test Cases 1', function() {
 
       });
 });
-describe('Test Cases 1', function() {
+describe('Test Cases 2', function() {
       it('Should find the webpage and choose a product', function(){
             indexPage.get();
             indexPage.setProductSelection('Desk');
@@ -73,7 +73,7 @@ describe('Test Cases 1', function() {
       });
 });
 
-describe('Test Cases 1', function() {
+describe('Test Cases 3', function() {
       it('Should find the webpage and choose a product', function(){
             indexPage.get();
             indexPage.setProductSelection('Desk');
