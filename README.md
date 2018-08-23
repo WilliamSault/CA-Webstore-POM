@@ -20,7 +20,7 @@ The selenium hub will then be running on `port 4444` and the CA webstore will be
 
 ## Running your own tests
 
-To run the test cases agianst the website, map the volume `/usr/src/app/Tests` to a folder with your tests. To execute the tests you must include `conf.js` which details the specs of the test. Examples are contiained within the '/Tests' folder.
+To run the test cases agianst the website, map the volume `/usr/src/app/Tests` to a folder with your tests. To execute the tests you must include `conf.js` which details the specs of the test. Examples are contiained within the `/Tests` folder.
 
 ```bash
 docker container run --rm --network="host" -v "PATH/TO/DIR/Tests":/usr/src/app/Tests williamsault/protractor
@@ -32,7 +32,7 @@ Tests results can be visualised through Allure.
 docker container run --rm --name allure -p 8800:8800 -v  "PATH/TO/DIR/Tests/allure-results":/allure-results williamsault/allure
 ```
 
-You can do this by running the shell script `RunTests.sh` or `RunTests.sh
+You can do this by running the shell script `RunTests.sh` or `RunTests.sh`
 
 ## Visulising the tests
 
