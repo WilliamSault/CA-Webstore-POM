@@ -2,6 +2,7 @@ var indexPage = require('./PageObjects/IndexPage');
 var shippingPage = require('./PageObjects/ShippingPage');
 var deliveryPage = require('./PageObjects/DeliveryPage');
 var paymentDetailsPage = require('./PageObjects/PaymentDetailsPage')
+var properties = require('./PageObjects/Properties.js');
 
 
 
@@ -12,7 +13,7 @@ describe('Test Cases 1', function() {
             indexPage.setProductSelection('Desk');
             indexPage.clickOrderProduct();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
 
             shippingPage.enterEmailField('Will@ca.com');
             shippingPage.enterConfirmEmailField('Will@ca.com');
@@ -24,17 +25,17 @@ describe('Test Cases 1', function() {
             shippingPage.enterPostcodeField('SL3 9LL');
             shippingPage.clickSubmit();
             
-            browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
 
             deliveryPage.clickContinue();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('payment_details'),5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('payment_details'),properties.waitTime);
 
             paymentDetailsPage.setCardSelection('AMEX');
             paymentDetailsPage.enterCardDetails('1234123412341234');
             paymentDetailsPage.clickCompletePurchase();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('finalise'),5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('finalise'),properties.waitTime);
 
 
       });
@@ -45,7 +46,7 @@ describe('Test Cases 2', function() {
             indexPage.setProductSelection('Desk');
             indexPage.clickOrderProduct();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
 
             shippingPage.enterEmailField('Will@ca.com');
             shippingPage.enterConfirmEmailField('Will@ca.com');
@@ -57,17 +58,17 @@ describe('Test Cases 2', function() {
             shippingPage.enterPostcodeField('SL3 9LL');
             shippingPage.clickSubmit();
             
-            browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
 
             deliveryPage.clickContinue();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('payment_details'),5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('payment_details'),properties.waitTime);
 
             paymentDetailsPage.setCardSelection('VISA');
             paymentDetailsPage.enterCardDetails('1234123412341234');
             paymentDetailsPage.clickCompletePurchase();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('finalise'),5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('finalise'),properties.waitTime);
 
 
       });
@@ -79,7 +80,7 @@ describe('Test Cases 3', function() {
             indexPage.setProductSelection('Desk');
             indexPage.clickOrderProduct();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
 
             shippingPage.enterEmailField('Will@ca.com');
             shippingPage.enterConfirmEmailField('Will@ca.com');
@@ -91,17 +92,17 @@ describe('Test Cases 3', function() {
             shippingPage.enterPostcodeField('SL3 9LL');
             shippingPage.clickSubmit();
             
-            browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
 
             deliveryPage.clickContinue();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('payment_details'),5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('payment_details'),properties.waitTime);
 
             paymentDetailsPage.setCardSelection('MasterCard');
             paymentDetailsPage.enterCardDetails('1234123412341234');
             paymentDetailsPage.clickCompletePurchase();
 
-            browser.wait(protractor.ExpectedConditions.urlContains('finalise'),5000);
+            browser.wait(protractor.ExpectedConditions.urlContains('finalise'),properties.waitTime);
 
 
       });

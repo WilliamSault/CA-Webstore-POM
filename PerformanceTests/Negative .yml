@@ -1,0 +1,19 @@
+execution:
+- concurrency: 5
+  hold-for: 1m
+  ramp-up: 10s
+  scenario: Negative 
+
+scenarios:
+  Negative :
+    requests:
+      - url: 'http://localhost:8080/index.php'
+        method: GET
+      - url: 'http://localhost:8080/shipping.php'
+        method: POST
+        think-time: 1000ms
+        body:
+          Dist: Amazon
+          Price: '10.00'
+          ProductName: <<<EMPTY>>>
+          Size: Small

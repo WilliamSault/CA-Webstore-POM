@@ -2,6 +2,7 @@ var indexPage = require('./PageObjects/IndexPage');
 var shippingPage = require('./PageObjects/ShippingPage');
 var deliveryPage = require('./PageObjects/DeliveryPage');
 var paymentDetailsPage = require('./PageObjects/PaymentDetailsPage')
+var properties = require('./PageObjects/Properties.js');
 
 browser.ignoreSynchronization = true;
 
@@ -11,7 +12,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -23,13 +24,13 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('MasterCard');
             paymentDetailsPage.enterCardDetails('1234123412341234');
         paymentDetailsPage.clickCompletePurchase();
-        browser.wait(protractor.ExpectedConditions.urlContains('finalise'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('finalise'), properties.waitTime);
     });
 
 
@@ -37,7 +38,7 @@ describe('Order Products', function() {
     it('Negative Scenario ', function(){
         indexPage.get();
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('index'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('index'), properties.waitTime);
     });
 
 
@@ -46,7 +47,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Desk');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -58,9 +59,9 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('AMEX');
             paymentDetailsPage.enterCardDetails('notnumbers');
         paymentDetailsPage.clickCompletePurchase();
@@ -72,7 +73,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Doombar');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -84,7 +85,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -93,7 +94,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Water');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -105,9 +106,9 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('<<<EMPTY>>>');
             paymentDetailsPage.enterCardDetails('1234');
         paymentDetailsPage.clickCompletePurchase();
@@ -119,7 +120,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Writing Pad');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -131,13 +132,13 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('MasterCard');
             paymentDetailsPage.enterCardDetails('1234123412341234');
         paymentDetailsPage.clickCompletePurchase();
-        browser.wait(protractor.ExpectedConditions.urlContains('finalise'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('finalise'), properties.waitTime);
     });
 
 
@@ -146,7 +147,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Testers Pocketbook');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -158,9 +159,9 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('VISA');
             paymentDetailsPage.enterCardDetails('1234');
         paymentDetailsPage.clickCompletePurchase();
@@ -172,7 +173,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Stationary');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -184,13 +185,13 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('MasterCard');
             paymentDetailsPage.enterCardDetails('1234123412341234');
         paymentDetailsPage.clickCompletePurchase();
-        browser.wait(protractor.ExpectedConditions.urlContains('finalise'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('finalise'), properties.waitTime);
     });
 
 
@@ -199,7 +200,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Headphones');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -211,9 +212,9 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('<<<EMPTY>>>');
             paymentDetailsPage.enterCardDetails('1234123412341234');
         paymentDetailsPage.clickCompletePurchase();
@@ -225,7 +226,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -237,7 +238,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -246,7 +247,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -258,9 +259,9 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('delivery'), properties.waitTime);
         deliveryPage.clickContinue();
-        browser.wait(protractor.ExpectedConditions.urlContains('payment'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('payment'), properties.waitTime);
         paymentDetailsPage.setCardSelection('<<<EMPTY>>>');
             paymentDetailsPage.enterCardDetails('notnumbers');
         paymentDetailsPage.clickCompletePurchase();
@@ -272,7 +273,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -284,7 +285,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -293,7 +294,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('1234.com');
         shippingPage.enterConfirmEmailField('1234.com');
         shippingPage.enterNameField('will');
@@ -305,7 +306,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -314,7 +315,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -326,7 +327,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -335,7 +336,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('11234123fA@D');
         shippingPage.enterNameField('<<<EMPTY>>>');
@@ -347,7 +348,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -356,7 +357,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -368,7 +369,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -377,7 +378,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('<<<EMPTY>>>');
@@ -389,7 +390,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -398,7 +399,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -410,7 +411,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -419,7 +420,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('<<<EMPTY>>>');
         shippingPage.enterConfirmEmailField('11234123fA@D');
         shippingPage.enterNameField('will');
@@ -431,7 +432,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 
@@ -440,7 +441,7 @@ describe('Order Products', function() {
         indexPage.get();
         indexPage.setProductSelection('Premium Laptop');
         indexPage.clickOrderProduct();
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
         shippingPage.enterEmailField('will@ca.com');
         shippingPage.enterConfirmEmailField('will@ca.com');
         shippingPage.enterNameField('will');
@@ -452,7 +453,7 @@ describe('Order Products', function() {
 
         shippingPage.clickSubmit();
 
-        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), 5000);
+        browser.wait(protractor.ExpectedConditions.urlContains('shipping'), properties.waitTime);
     });
 
 

@@ -8,6 +8,7 @@ var Properties = function()
 
     //Test Properties
     this.EMPTY = "<<<EMPTY>>>";
+    this.waitTime = 1500;
 
 
   };

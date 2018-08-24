@@ -1,0 +1,65 @@
+execution:
+- concurrency: 5
+  hold-for: 1m
+  ramp-up: 10s
+  scenario: Negative (1)
+
+scenarios:
+  Negative (1):
+    requests:
+      - url: 'http://localhost:8080/index.php'
+        method: GET
+      - url: 'http://localhost:8080/shipping.php'
+        method: POST
+        think-time: 1000ms
+        body:
+          Dist: Amazon
+          Price: '10.00'
+          ProductName: Premium Laptop
+          Size: Small
+      - url: 'http://localhost:8080/delivery.php'
+        method: POST
+        think-time: 31935ms
+        body:
+          Adr1Correct: 'true'
+          Adr1Empty: 'false'
+          Adr1Valid: 'true'
+          Adr2Correct: 'null'
+          Adr2Empty: 'true'
+          Adr2Valid: 'true'
+          ConfirmEmail: 'will@ca.com'
+          CountryEmpty: 'false'
+          CountryValid: 'true'
+          CountyCorrect: 'null'
+          CountyEmpty: 'null'
+          CountyValid: 'true'
+          EarlyFinish: 'false'
+          Email: 'will@ca.com'
+          EmailEmpty: 'null'
+          EmailValid: 'true'
+          EmailsDontMatch: 'null'
+          NameCorrect: 'null'
+          NameEmpty: 'null'
+          NameValid: 'true'
+          PostCodeCorrect: 'null'
+          PostCodeEmpty: 'null'
+          PostCodeValid: 'true'
+          country: 'Wales'
+          county: 'Oxfordshire'
+          line1: '1 main Street'
+          line2: 'Oxford'
+          name: 'name'
+          post_code: OX294TP
+      - url: 'http://localhost:8080/payment_details.php'
+        method: POST
+        think-time: 2848ms
+      - url: 'http://localhost:8080/finalise.php'
+        method: POST
+        think-time: 6946ms
+        body:
+          EarlyFinish: 'false'
+          cardCharge: '2'
+          cardNo: 'notnumbers'
+          cardNumberValid: 'true'
+          cardType: <<<EMPTY>>> (£2.00 Charge)
+          cardValid: 'true'
