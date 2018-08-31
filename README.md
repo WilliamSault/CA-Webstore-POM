@@ -34,6 +34,12 @@ docker container run --rm --name allure -p 8800:8800 -v  "PATH/TO/DIR/Tests/allu
 
 You can do this by running the shell script `RunTests.sh` or `RunTests.sh`
 
+## Cucumber implementation
+
+Feature files can be excuted from the features folder. The step definitions can also be found here. 
+
+In order to change between the normal and cucumber execution. You need to copy and paste the contents of the `conf.cucumber.js` into the `conf.js`. Then execute them as normal.
+
 ## Visulising the tests
 
 An extra option is to visualise the test cases being ran. To do this you need a [VNC viewer](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla?hl=en). I recommend using the chrome extension or, for mulitple desktops at once, download the desktop version.
