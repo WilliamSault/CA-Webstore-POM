@@ -8,6 +8,8 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  ignoreUncaughtExceptions: true,
+
   // set to "custom" instead of cucumber.
   framework: 'custom',
 

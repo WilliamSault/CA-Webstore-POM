@@ -14,8 +14,18 @@ Given('I go to the homepage', function () {
     indexPage.get();
 });
 
+Then('I will be on the index page', function (next) {
+    browser.driver.wait(EC.urlContains("index"),5000)
+    .then(function () {
+        next();            
+    });
+  });
+
 When('I select the product {string}',function (product) {
     indexPage.setProductSelection(product);
+});
+
+When('I click order product',function () {
     indexPage.clickOrderProduct();
 });
 

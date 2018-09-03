@@ -20,4 +20,4 @@ exports.config = {
     'browserName': 'chrome'
   }],
   specs: ['ARD*.js']
-}
+};

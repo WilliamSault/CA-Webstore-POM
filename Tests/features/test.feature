@@ -1,7 +1,9 @@
 Feature: webstore
     Scenario: Order Product
     Given I go to the homepage
+    Then I will be on the index page
     When I select the product "Premium Laptop"
+    When I click order product
     Then I will be on the shipping page
     When I enter "Will@ca.com" in the email field
     When I enter "Will@ca.com" in the confirm email field
