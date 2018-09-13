@@ -15,7 +15,7 @@ services:
             - progrid_grid_internal
 
     nodechrome:
-        container_name: chormenode
+        container_name: chromenode
         image: selenium/node-chrome-debug
         privileged: true
         depends_on:
